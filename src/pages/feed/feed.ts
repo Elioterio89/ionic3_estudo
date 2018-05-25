@@ -30,6 +30,8 @@ export class FeedPage {
     qtdComents:5,
     tmpComent:"6hrs atras"
   }
+
+  public lista_videos = new Array<any>();
   public NomeUsuario:string ="Kendy";
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -49,6 +51,7 @@ export class FeedPage {
       data=>{
         const response = (data as any);
         const  obj_retorno = JSON.parse(response._body); 
+        this.lista_videos = obj_retorno.results;
         console.log(obj_retorno);
       },
       error=>{
