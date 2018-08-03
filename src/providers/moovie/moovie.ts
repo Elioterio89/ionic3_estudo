@@ -14,8 +14,8 @@ export class MoovieProvider {
   constructor(public http: Http) {
     console.log('Hello MoovieProvider Provider');
   }
-  getLastMovies() {
-    return this.http.get(this.pathAPI + "/movie/popular?api_key=4e22b936ba94486717be6635bb0ebbea");
+  getLastMovies(page=1) {
+    return this.http.get(this.pathAPI + `/movie/popular?page=${page}&api_key=4e22b936ba94486717be6635bb0ebbea` );
   }
 
   getLastDatails(filmeId) {
