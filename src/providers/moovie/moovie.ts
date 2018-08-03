@@ -18,4 +18,8 @@ export class MoovieProvider {
     return this.http.get(this.pathAPI + "/movie/popular?api_key=4e22b936ba94486717be6635bb0ebbea");
   }
 
+  getLastDatails(filmeId) {
+    return this.http.get(this.pathAPI + `/movie/${filmeId}?api_key=4e22b936ba94486717be6635bb0ebbea`);
+  }
+
 }
